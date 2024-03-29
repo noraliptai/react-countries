@@ -12,8 +12,8 @@ function CountryData({selectedCountry, setSelectedCountry}) {
       <p>Continent: {selectedCountry.continents.map(continent => continent).join(", ")}</p>
       <p>Region: {selectedCountry.region}</p>
       <p>Timezones: {selectedCountry.timezones.map(timezone => timezone).join(", ")}</p>
-      <p>Languages: {Object.values(selectedCountry.languages).join(", ")}</p>
-      <p>Currencies: {Object.keys(selectedCountry.currencies).map(key => selectedCountry.currencies[key].name).join(", ")}</p>
+      <p>Languages: {selectedCountry.languages && Object.values(selectedCountry.languages).join(", ")}</p>
+      <p>Currencies: {selectedCountry.currencies && Object.keys(selectedCountry.currencies).map(key => selectedCountry.currencies[key].name).join(", ")}</p>
       <button onClick={() => {
         setSelectedCountry(null)
       }}>Back</button>

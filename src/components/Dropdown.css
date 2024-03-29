@@ -1,0 +1,34 @@
+.dropdown {
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 10px;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 5px;
+  z-index: 2;
+}
+
+.dropdown p {
+  padding: 5px;
+  text-align: left;
+}
+
+.dropdown p:hover {
+  cursor: pointer;
+  text-shadow: 0 0 3px grey;
+  text-decoration: underline;
+}
+
+.dropdown li {
+  list-style-type: none;
+  text-align: left;
+  padding: 5px;
+}
+
+.dropdown li:hover {
+  cursor: pointer;
+  text-shadow: 0 0 3px grey;
+  background-color: rgb(164, 181, 206);
+  border-radius: 10px;
+}
