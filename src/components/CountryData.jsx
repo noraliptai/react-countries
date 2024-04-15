@@ -1,6 +1,7 @@
 import './CountryData.css'
+import CountryListItem from './CountryListItem'
 
-function CountryData({selectedCountry, setSelectedCountry}) {
+function CountryData({countries, selectedCountry, setSelectedCountry}) {
 
   return (
     <div className="countryDetails">
@@ -14,9 +15,14 @@ function CountryData({selectedCountry, setSelectedCountry}) {
       <p>Timezones: {selectedCountry.timezones.map(timezone => timezone).join(", ")}</p>
       <p>Languages: {selectedCountry.languages && Object.values(selectedCountry.languages).join(", ")}</p>
       <p>Currencies: {selectedCountry.currencies && Object.keys(selectedCountry.currencies).map(key => selectedCountry.currencies[key].name).join(", ")}</p>
-      <button onClick={() => {
+      <div className="neighbors">Neighbors:
+        <div>
+          {!selectedCountry.borders ? "This country has no neighbours." : selectedCountry.borders.map((neighbor, index) => <CountryListItem country={countries.find(country => country.cca3 === neighbor)} key={index} setSelectedCountry={setSelectedCountry}/>)}
+        </div>
+      </div>
+      <button className="back" onClick={() => {
         setSelectedCountry(null)
-      }}>Back</button>
+      }}>Back to country list</button>
     </div>
   )
 }

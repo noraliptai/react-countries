@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       {selectedCountry
-      ? <CountryData selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry}/>
+      ? <CountryData countries={countries} selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry}/>
       : countries.length > 0
         ? <Countries countries={countries} setSelectedCountry={setSelectedCountry}/>
         : <p>Loading...</p>
