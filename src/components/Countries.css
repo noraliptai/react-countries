@@ -12,6 +12,14 @@
   margin: 10px 0;
 }
 
+.filters {
+  height: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .searchInput {
   padding: 10px;
   border-radius: 10px;

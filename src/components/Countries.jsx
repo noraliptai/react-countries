@@ -30,10 +30,11 @@ function Countries({countries, setSelectedCountry}) {
         setSearchString(event.target.value)
       }}/>
 
-
-      <Dropdown topic={"continents"} countries={countries} setFilteredCountries={setFilteredCountries}/>
-      <Dropdown topic={"timezones"} countries={countries} setFilteredCountries={setFilteredCountries}/>
-      <Dropdown topic={"languages"} countries={countries} setFilteredCountries={setFilteredCountries}/>
+      <div className="filters">
+        <Dropdown topic={"continents"} countries={countries} setFilteredCountries={setFilteredCountries}/>
+        <Dropdown topic={"timezones"} countries={countries} setFilteredCountries={setFilteredCountries}/>
+        <Dropdown topic={"languages"} countries={countries} setFilteredCountries={setFilteredCountries}/>
+      </div>
 
       <div className="countryList">
         {sort === "asc"
