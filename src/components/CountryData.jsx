@@ -17,7 +17,7 @@ function CountryData({countries, selectedCountry, setSelectedCountry}) {
       <p>Currencies: {selectedCountry.currencies && Object.keys(selectedCountry.currencies).map(key => selectedCountry.currencies[key].name).join(", ")}</p>
       <div className="neighbors">Neighbors:
         <div>
-          {!selectedCountry.borders ? "This country has no neighbours." : selectedCountry.borders.map((neighbor, index) => <CountryListItem country={countries.find(country => country.cca3 === neighbor)} key={index} setSelectedCountry={setSelectedCountry}/>)}
+          {!selectedCountry.borders ? "This country is surrounded by sea." : selectedCountry.borders.map((neighbor, index) => <CountryListItem country={countries.find(country => country.cca3 === neighbor)} key={index} setSelectedCountry={setSelectedCountry}/>)}
         </div>
       </div>
       <button className="back" onClick={() => {

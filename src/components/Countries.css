@@ -42,8 +42,8 @@
   width: 200px;
   background-color: rgba(255, 255, 255, 0.806);
   border-radius: 10px;
-  border: 1px solid darkgreen;
-  box-shadow: 0 0 5px beige;
+  border: 1px solid rgb(164, 181, 206);
+  box-shadow: 2px 2px 5px black;
   padding: 10px;
   position: relative;
   overflow: hidden;
@@ -79,6 +79,7 @@ button {
 button:hover {
   box-shadow: 0 0 5px grey;
   background-color: rgb(255, 255, 255);
+  color: rgb(85, 129, 194)
 }
 button:focus,
 button:focus-visible {
