@@ -17,7 +17,7 @@ function Countries({countries, setSelectedCountry}) {
     setFilteredCountries(countries
       .filter(country => filters.continents === "" ? country : country.continents.includes(filters.continents))
       .filter(country => filters.timezones === "" ? country : country.timezones.includes(filters.timezones))
-      .filter(country => filters.languages === "" ? country : Object.values(country.languages).includes(filters.languages)))
+      .filter(country => filters.languages === "" ? country : country.languages && Object.values(country.languages).includes(filters.languages)))
   }, [filters])
 
   const throwRandomCountry = () => {
