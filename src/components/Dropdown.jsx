@@ -39,7 +39,7 @@ function Dropdown({ topic, filteredCountries, filters, setFilters }) {
 
   return (
     <div id={topic} className="dropdown">
-      <p onClick={() => {
+      <p onClick={(e) => {
         setDropdownShow(show => !show)
         dropdownShow && setSelected(null)
         dropdownShow && setFilters({...filters, [topic]: ""})

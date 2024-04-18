@@ -7,7 +7,8 @@ Working features:
 - Search for a country by name
 - Filter countries either by continent, timezone or language
 - Multiple filters can be applied at the same time
-- Clear all filters
+- Clear all filters button
+- Random country generating button
 - See more info on a country by clicking Learn more
 - Neighbors of the selected country are also clickable
 

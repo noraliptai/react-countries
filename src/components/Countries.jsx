@@ -20,6 +20,10 @@ function Countries({countries, setSelectedCountry}) {
       .filter(country => filters.languages === "" ? country : Object.values(country.languages).includes(filters.languages)))
   }, [filters])
 
+  const throwRandomCountry = () => {
+    setSelectedCountry(countries[Math.floor(Math.random()*countries.length)])
+  }
+
   let sortedCountries = filteredCountries
 
   switch (sort) {
@@ -62,15 +66,18 @@ function Countries({countries, setSelectedCountry}) {
         
       </div>
 
-      <input className="searchInput" type="text" placeholder="Search country by name" onChange={(event) => {
-        setSearchString(event.target.value)
-      }}/>
-
       <div className="filters">
         <Dropdown topic={"continents"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
         <Dropdown topic={"timezones"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
         <Dropdown topic={"languages"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
         <button onClick={() => setFilters({continents: "", timezones: "", languages: ""})}>Clear all filters</button>
+      </div>
+
+      <div className="searchRandom">
+        <input className="searchInput" type="text" placeholder="Search country by name" onChange={(event) => {
+          setSearchString(event.target.value)
+        }}/>
+        <button id="throwRandom" onClick={throwRandomCountry}>Give me a random country!</button>
       </div>
 
       <div className="countryList">
