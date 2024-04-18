@@ -6,14 +6,14 @@ Working features:
 - Sort alphabetically, by population or by area
 - Search for a country by name
 - Filter countries either by continent, timezone or language
+- Multiple filters can be applied at the same time
+- Clear all filters
 - See more info on a country by clicking Learn more
 - Neighbors of the selected country are also clickable
 
 Planned features:
 
-- Multiple filters used at the same time
 - Additional filters: landlocked/not, independent/not
-- Clear all filters button
 - Add/remove countries to 'visited' or 'want to visit' list, in Localstorage
 - Going back to country list from a selected country should keep previous settings (sort, filter)
 - Throw me a random country

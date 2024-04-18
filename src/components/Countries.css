@@ -69,6 +69,7 @@ button {
   border-radius: 8px;
   border: 1px solid lightgrey;
   padding: 0.6em 1.2em;
+  max-height: 42px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;

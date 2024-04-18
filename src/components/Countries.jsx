@@ -7,10 +7,18 @@ function Countries({countries, setSelectedCountry}) {
   const [sort, setSort] = useState("")
   const [searchString, setSearchString] = useState("")
   const [filteredCountries, setFilteredCountries] = useState(countries)
+  const [filters, setFilters] = useState({continents: "", timezones: "", languages: ""})
   
   useEffect(() => {
     setFilteredCountries(countries.filter(country => country.name.common.toLowerCase().includes(searchString.toLowerCase())))
   }, [searchString, countries])
+
+  useEffect(() => {
+    setFilteredCountries(countries
+      .filter(country => filters.continents === "" ? country : country.continents.includes(filters.continents))
+      .filter(country => filters.timezones === "" ? country : country.timezones.includes(filters.timezones))
+      .filter(country => filters.languages === "" ? country : Object.values(country.languages).includes(filters.languages)))
+  }, [filters])
 
   let sortedCountries = filteredCountries
 
@@ -59,9 +67,10 @@ function Countries({countries, setSelectedCountry}) {
       }}/>
 
       <div className="filters">
-        <Dropdown topic={"continents"} countries={countries} setFilteredCountries={setFilteredCountries}/>
-        <Dropdown topic={"timezones"} countries={countries} setFilteredCountries={setFilteredCountries}/>
-        <Dropdown topic={"languages"} countries={countries} setFilteredCountries={setFilteredCountries}/>
+        <Dropdown topic={"continents"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
+        <Dropdown topic={"timezones"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
+        <Dropdown topic={"languages"} filteredCountries={filteredCountries} filters={filters} setFilters={setFilters}/>
+        <button onClick={() => setFilters({continents: "", timezones: "", languages: ""})}>Clear all filters</button>
       </div>
 
       <div className="countryList">
